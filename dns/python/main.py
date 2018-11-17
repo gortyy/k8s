@@ -2,33 +2,24 @@ import argparse
 from kubernetes import client, config, utils
 
 
-config.load_kube_config()
-
-
-class Creator:
+class CreateFromYaml:
     def __init__(self):
         self.api_client = client.ApiClient()
 
-
-class CreateFromYaml(Creator):
     def create_object(self, filename):
         return utils.create_from_yaml(self.api_client, filename)
 
     def create_mysql_service(self):
-        response = self.create_object("mysql-service.yml")
-        print(response)
+        return self.create_object("mysql-service.yml")
 
     def create_mysql_deployment(self):
-        response = self.create_object("mysql-deployment.yml")
-        print(response)
+        return self.create_object("mysql-deployment.yml")
 
     def create_wordpress_service(self):
-        response = self.create_object("wordpress-service.yml")
-        print(response)
+        return self.create_object("wordpress-service.yml")
 
     def create_wordpress_deployment(self):
-        response = self.create_object("wordpress-deployment.yml")
-        print(response)
+        return self.create_object("wordpress-deployment.yml")
 
 
 class CreateFromCode:
