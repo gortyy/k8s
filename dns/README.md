@@ -23,5 +23,7 @@ python python/main.py --type yaml
 ```shell
 cd go
 go build -o ./main.out
-./main.out -kubeconfig=$HOME/.kube/config
+./main.out
+# or
+./main.out -kubeconfig=$PATH_TO_K8S_CONFIG
 ```
