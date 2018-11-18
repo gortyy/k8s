@@ -18,4 +18,8 @@ python python/main.py --type yaml
 
 * go
 
-TODO
+```shell
+cd go
+go build -o ./main.out
+./main.out -kubeconfig=$HOME/.kube/config
+```
