@@ -39,12 +39,12 @@ func loadKubeConfig() *kubernetes.Clientset {
 	return clientset
 }
 
-type KubernetesObject interface {
+type K8sObjectCreator interface {
 	Create()
 }
 
 type Service struct {
-	KubernetesObject
+	K8sObjectCreator
 	Name   string
 	Labels map[string]string
 	Port   int32
@@ -78,7 +78,7 @@ func (s Service) Create() {
 }
 
 type Deployment struct {
-	KubernetesObject
+	K8sObjectCreator
 	Name     string
 	Labels   map[string]string
 	Strategy appsv1.DeploymentStrategy
