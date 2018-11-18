@@ -1,14 +1,16 @@
 # Kubernetes DNS
 
-### Creating MySQL - Wordpress deployment with service discovery
 
-* kubectl
+
+## Running Examples
+
+### kubectl
 
 ```shell
 bash kubectl/main.sh
 ```
 
-* python
+### python
 
 ```shell
 python python/main.py --type code
@@ -16,7 +18,7 @@ python python/main.py --type code
 python python/main.py --type yaml
 ```
 
-* go
+### go
 
 ```shell
 cd go
