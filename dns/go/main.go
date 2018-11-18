@@ -40,7 +40,6 @@ func loadKubeConfig() *kubernetes.Clientset {
 }
 
 type KubernetesObject interface {
-	GetName() string
 	Create()
 }
 
@@ -50,10 +49,6 @@ type Service struct {
 	Labels map[string]string
 	Port   int32
 	Type   apiv1.ServiceType
-}
-
-func (s Service) GetName() string {
-	return s.Name
 }
 
 func (s Service) Create() {
@@ -79,7 +74,7 @@ func (s Service) Create() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("Created service %q.\n", s.GetName())
+	fmt.Printf("Created service %q.\n", s.Name)
 }
 
 type Deployment struct {
@@ -90,10 +85,6 @@ type Deployment struct {
 	Image    string
 	Env      []apiv1.EnvVar
 	Ports    []apiv1.ContainerPort
-}
-
-func (d Deployment) GetName() string {
-	return d.Name
 }
 
 func (d Deployment) Create() {
@@ -131,7 +122,7 @@ func (d Deployment) Create() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("Created deployment %q.\n", d.GetName())
+	fmt.Printf("Created deployment %q.\n", d.Name)
 }
 
 func main() {
