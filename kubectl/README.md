@@ -1,6 +1,7 @@
 ## Kubectl
 
 Kubectl is the main gateway of contact with local or remote k8s clusters. That's the main tool used when working with k8s.
+https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands
 
 ### Basic commands
 
