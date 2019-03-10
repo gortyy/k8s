@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: example
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        server: monitoring
+    spec:
+      containers:
+      - name: swisnap
+        image: solarwinds/solarwinds-snap-agent-docker:1.1.0
+        env:
+        - name: APPOPTICS_TOKEN
+          value: token
