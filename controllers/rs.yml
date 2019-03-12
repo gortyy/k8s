@@ -18,3 +18,5 @@ spec:
         env:
         - name: APPOPTICS_TOKEN
           value: token
+        ports:
+        - containerPort: 21413
