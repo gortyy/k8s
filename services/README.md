@@ -210,4 +210,8 @@ spec:
 
 ### Ingress
 
-To be continued...
+<i>Ingress<i> - act of going in or entering; entryway; the right to enter; a means or place of entering
+
+Ingresses are needed because each `LoadBalancer` service requires its own load balancer with its own public IP address - Ingress requires only one, even when its providing access to multiple services. When client sends request to Ingress, the host and path in the requests determine which service the request is forwarded to.
+
+To make Ingress resources work, an Ingress controller needs to be running in the cluster.
