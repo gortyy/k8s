@@ -1,0 +1,5 @@
+FROM python
+
+COPY ./server_v4.py ./
+
+CMD python server_v4.py

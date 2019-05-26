@@ -1,0 +1,15 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: http
+spec:
+  replicas: 4
+  template:
+    metadata:
+      name: http
+      labels:
+        app: http
+    spec:
+      containers:
+        - image: dsmiech/python_http:v1
+          name: python-http
