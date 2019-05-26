@@ -1,0 +1,15 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: multi-completion-example-job
+spec:
+  completions: 5
+  template:
+    metadata:
+      labels:
+        app: example-job
+    spec:
+      restartPolicy: OnFailure
+      containers:
+      - name: job
+        image: luksa/batch-job

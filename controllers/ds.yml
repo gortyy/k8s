@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: example
+spec:
+  selector:
+    matchLabels:
+      monitoring: docker
+  template:
+    metadata:
+      labels:
+        monitoring: docker
+    spec:
+      nodeSelector:
+        service: docker
+      containers:
+      - name: swisnap
+        image: solarwinds/solarwinds-snap-agent-docker:1.1.0
+        env:
+          - name: APPOPTICS_TOKEN
+            value: token

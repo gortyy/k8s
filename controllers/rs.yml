@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: example
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      server: monitoring
+  template:
+    metadata:
+      labels:
+        server: monitoring
+    spec:
+      containers:
+      - name: swisnap
+        image: solarwinds/solarwinds-snap-agent-docker:1.1.0
+        env:
+        - name: APPOPTICS_TOKEN
+          value: token
+        ports:
+        - containerPort: 21413
